@@ -65,6 +65,8 @@ Since the board was manufactured using DIY methods, standard library footprints 
 
 **Project Team / Proje Ekibi:**
 * **Mehmet Burak YILMAZ** - *FPGA Design & Verification & PCB Design*
+  * 📧 mehmetburakyilmaz55@gmail.com
+  * 💻 https://github.com/MehmetBurakYilmaz55
 
 ## 📄 License
 This project is open-source and available for educational purposes.
